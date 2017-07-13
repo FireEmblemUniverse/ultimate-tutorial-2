@@ -64,7 +64,7 @@ next time you run `MAKE HACK.CMD`, the changes will be saved!
 "%~dp0FE8_clean.gba"` (the path to the clean rom is only needed if you are
 repointing a table)
 
-### [Using Definitions](#defn)
+[Using Definitions](#defn)
 
 NMM2CSV comes with a file called `Table Definitions.txt`. This comes with a few
 useful definitions like weapon and character abilities. You can also add your

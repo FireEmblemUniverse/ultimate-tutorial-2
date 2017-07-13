@@ -4,8 +4,8 @@
 You may have heard of a program called **Nightmare**, which can be used to make
 changes to things like character stats, item properties, and so on. Fortunately
 for you, **you won't need to worry about it!** You do need to download the
-  appropriate set of **Nightmare Modules** for your game, but you won't need
-  the actual Nightmare program.
+appropriate set of **Nightmare Modules** for your game, but you won't need
+the actual Nightmare program.
 
 ### [How Tables Work](#how-tables-work)
 
@@ -37,8 +37,7 @@ N2C.exe. **You should only have to do this once!** Once you have the
 spreadsheets, you can edit them using Microsoft Excel, LibreOffice, Google
 Sheets... any spreadsheet program will do.
 
-> ##### **Put your Nightmare Modules, N2C and C2EA into a new folder called
-> Root\Tables.**
+> ##### **Put your Nightmare Modules, N2C and C2EA into a new folder called Root\Tables.**
 
 Next, you make the changes you want. In this example, I am going to give Eirika
 a base Strength of 10. First, I open up `FE8 Character Editor.csv`:
@@ -56,13 +55,9 @@ run the program and it will process your Nightmare Modules and create a file
 called `Table Installer.txt`. Add this file to your **ROM Buildfile** and the
 next time you run `MAKE HACK.CMD`, the changes will be saved!
 
-> #### **You *MUST* run C2EA again every time you make changes to the
-> modules.**
+> #### **You *MUST* run C2EA again every time you make changes to the modules.**
 
-> You can add C2EA into your MAKEHACK.cmd batch file using 
-`cd "%~dp0Tables"` (or whatever subfolder c2ea is in) `c2ea
-"%~dp0FE8_clean.gba"` (the path to the clean rom is only needed if you are
-repointing a table)
+> You can add C2EA into your MAKEHACK.cmd batch file using `cd "%~dp0Tables"` (or whatever subfolder c2ea is in) `c2ea "%~dp0FE8_clean.gba"` (the path to the clean rom is only needed if you are repointing a table)
 
 ### [Using Definitions](#using-definitions)
 

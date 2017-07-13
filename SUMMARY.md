@@ -1,3 +1,5 @@
 # Summary
 
-* [First Chapter](chapter1.md)
+* [Getting Started](intro/README.md)
+    * [Aside: Hacking](intro/hacking.md)
+

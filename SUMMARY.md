@@ -9,4 +9,12 @@
     * [PUSH and POP](buildbasics/README.md#pushpop)
     * [Definitions, Labels and Macros](buildbasics/README.md#defn)
     * [MAKE\_HACK.cmd](buildbasics/README.md#make)
+* [Nightmare](nightmare/README.md)
+    * [How Tables Work](nightmare/README.md#tables)
+    * [Using NMM2CSV](nightmare/README.md#nmm2csv)
+    * [Using Definitions](nightmare/README.md#defn)
+    * [Repointing and Expanding with \#inctext](nightmare/README.md#incl)
+    * [Appendix: Nightmare Module Format](nightmare/README.md#fmt)
+* [Text](text/README.md)
+    * [Inserting Text](text/README.md#insert)
 

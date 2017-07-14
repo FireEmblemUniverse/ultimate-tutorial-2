@@ -4,7 +4,8 @@ Each piece of text in GBAFE is tied to a **text ID** up to
 0xFFFF. This text contains a number of **control codes** that determine extra
 data such as loading and moving faces. 
 
-> ###Important: Text editing requires the ***Anti-Huffman Patch*** to be
+> ###Important:
+> Text editing requires the ***Anti-Huffman Patch*** to be
 > installed. This is included with the **FE8 Essential Fixes**, or as part of
 > the **FEditor Autopatches for EA** if you are using FE7.
 
@@ -15,7 +16,8 @@ for us.
 
 Here is a very simple example of a text file called `UnitNames.txt`:
 
-    # 0x212 RubyName Ruby[X]
+    # 0x212 RubyName
+    Ruby[X]
 
 There are three parts to each text entry. First, `# 0x212` is a **text ID**. It
 happens to be the text ID that refers to Eirika's name.
@@ -31,11 +33,11 @@ special code that tells the game where the text stops.
 
 Now, let's look at something a little more complicated.
 
-    # 0x903 [OpenFarLeft][LoadFace][0x02][0x01] Hello, how are you?[A] As for
-    me, I'm talking[NL] words at you![A][X] Let's break it down. First, we've
-    got a text ID. This one is used in FE8 for one of the prologue
-    conversations. Next, the [OpenFarLeft] control code sets the 'cursor' over
-    to the Far Left position. 
+    # 0x903
+    [OpenFarLeft][LoadFace][0x02][0x01]
+    Hello, how are you?[A]
+    As for me, I'm talking[NL]
+    words at you![A][X]
 
 > #### The positions from left (flip for the right side):
 > [FarFarLeft]\(offscreen) > [FarLeft] > [Midleft] > [Left]
@@ -56,10 +58,14 @@ This textfile contains **all of the text changes** you want to make. For
 example, we can take the two previous text changes and put them in a single
 document, which I've called `text_buildfile.txt`.
 
-    # 0x212 RubyName Ruby[X]
+    # 0x212 RubyName
+    Ruby[X]
     
-    # 0x903 [OpenFarLeft][LoadFace][0x02][0x01] Hello, how are you?[A] As for
-    me, I'm talking[NL] words at you![A][X]
+    # 0x903
+    [OpenFarLeft][LoadFace][0x02][0x01]
+    Hello, how are you?[A]
+    As for me, I'm talking[NL] 
+    words at you![A][X]
     
 >####But wait, why is it called a **buildfile**?
 
@@ -70,19 +76,23 @@ of the text buildfiles I used for a simple one chapter hack:
     
     #include "PrologueText.txt"
 
-  #include "MiscText.txt"
+    #include "MiscText.txt"
 
 You'll notice there aren't any actual text entries here, those are all split
 into separate text files for organization. Peeking at PrologueText.txt, we can
 see things like:
 
-    #0x664 BrownBoxPrologue 1 year ago[X]
+    #0x664 BrownBoxPrologue
+    1 year ago[X]
     
-    #0x665 BrownBoxPrologue2 Present day[X]
+    #0x665 BrownBoxPrologue2
+    Present day[X]
     
-    # 0x1a2 Prologue_Objective_Long Survive[X]
+    # 0x1a2 Prologue_Objective_Long
+    Survive[X]
     
-    #0x19d Prologue_Goal_Window Survive[X]
+    #0x19d Prologue_Goal_Window
+    Survive[X]
 
 Now you may have noticed something else this has in common with an event
 buildfile - whenever we process the text, it's **always the same file**.

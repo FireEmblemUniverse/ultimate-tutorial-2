@@ -45,4 +45,8 @@
         * [Custom CGs](gfx/misc.md#custom-cgs)
         * [Battle Backgrounds](gfx/misc.md#battle-backgrounds)
         * [Battle Frames](gfx/misc.md#battle-frames-fe8)
+* [Inserting Music](sound/README.md)
+    * [Converting from MIDI](sound/README.md#converting-from-midi)
+    * [Custom Sound Effects](sound/README.md#custom-sfx)
+    * [About Song Groups](sound/README.md#about-song-groups)
 

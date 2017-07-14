@@ -49,4 +49,10 @@
     * [Converting from MIDI](sound/README.md#converting-from-midi)
     * [Custom Sound Effects](sound/README.md#custom-sfx)
     * [About Song Groups](sound/README.md#about-song-groups)
+* [Inserting Maps](maps/README.md)
+    * [FEMapCreator](maps/tools.md#femapcreator)
+    * [Tiled](maps/tools.md#tiled)
+    * [Tile Changes](maps/README.md#tile-changes)
+    * [Insertion](maps/README.md#insertion)
+    * [World Map Editing](maps/README.md#world-map-editing-fe8)
 

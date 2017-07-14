@@ -16,5 +16,9 @@
     * [Repointing and Expanding with \#inctext](nightmare/README.md#repointing-and-expanding-inctext)
     * [Appendix: Nightmare Module Format](nightmare/appendix.md)
 * [Text](text/README.md)
-    * [Inserting Text](text/README.md#insert)
+    * [Inserting Text](text/README.md#inserting-text)
+* [Graphics](gfx/README.md)
+    * [GBA Graphics Editor](gfx/gbage.md)
+        * [Image Control](gfx/gbage.md#image-control)
+        * [Compressed Graphics](gfx/gbage.md#compressed-graphics)
 

@@ -65,7 +65,7 @@ ROM's images. Once again, there are multiple options:
  >- **+Screen** and **-Screen** - Changes the viewed offset by one screen.
  >- **Compressed controls** and **Size** - See their respective sections.
 
-### Compressed Graphics
+#### Compressed Graphics
 
 GBAGE determines what is and is not an image by looking for a specific set of
 bytes at the beginning of a **compressed image**. When viewing a **compressed
@@ -76,7 +76,7 @@ jumbled mess. When you change the **Offset**, GBAGE is not seeing the image
 header, and does not know the image is compressed. For uncompressed images,
 such as item icons, the **-Block** and **+Block** options are useful.
 
-### Compressed Controls
+#### Compressed Controls
 
 The **Image Control** window has a box in its lower-left corner that has two
 things in it: **Image** and **Amount of blocks added**. When you open a ROM in
@@ -90,7 +90,7 @@ careful. Furthermore, this box only applies to compressed images. The **Amount
 of blocks added** note shows how many pixels or tiles needed to be added to the
 image to display a rectangle. 
 
-### Size
+#### Size
 
 This box on the **Image Control** window  dictates how many tiles wide or tall
 to display the image. This setting is useful for images that may be seen
@@ -186,7 +186,7 @@ where an entire byte is used to save a pixel's colour information, so there are
 
 Counting 0, that gives an 8bit bitmap 256 colours to choose from.
 
-### Palette Index
+#### Palette Index
 
 Sometimes graphics will be able to use different palettes, such as map sprites
 or windows whose colour is determined by the options menu. Graphics like these
@@ -206,8 +206,10 @@ A quick change of palette index yields:
 
 This leads us into the next window: **Colour Control**.
 
-### Colour Control
-Opening the **Colour Control** window after changing the colour index, you should get something like:
+#### Colour Control
+
+Opening the **Colour Control** window after changing the colour index, you
+should get something like:
 
 ![Colour Control](http://puu.sh/rFSSk/28460c99fe.png "Colour Control")
 

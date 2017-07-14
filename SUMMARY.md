@@ -55,4 +55,12 @@
     * [Tile Changes](maps/README.md#tile-changes)
     * [Insertion](maps/README.md#insertion)
     * [World Map Editing](maps/README.md#world-map-editing-fe8)
+* [Events](ev/README.md)
+    * [How to Read the Doc](ev/README.md#how-to-read-the-doc)
+    * [How to Read Event Disassembly](ev/README.md#how-to-read-the-disassembled-events)
+    * [The World Map](ev/README.md#the-world-map)
+* [Engine Hacks](asm/README.md)
+    * [Inserting ASM hacks](asm/README.md#inserting-asm-hacks)
+    * [Introduction to Disassembly](asm/README.md#introduction-to-assembly)
+    * [Using the Debugger](asm/README.md#using-the-debugger)
 

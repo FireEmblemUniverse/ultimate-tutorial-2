@@ -115,6 +115,26 @@ of the **sprite**. There are four **attributes**, aptly named **attr0-3**. Each
 
 
 ### Palettes
+
+***Battle Sprite Palettes***
+**Do FE7/FE6 version \*soon\*** (remind me to do the FE7/FE6 instructions
+later) ~ Tera ***FOR FE8***
+There is a nightmare module for setting the palettes in FE8 called the battle
+palette association editor.  it comes in two parts; the first part is for
+setting the class and the second part is for choosing the palette.  If the
+character is not in a class listed in their class list, the game uses the
+default palette.  ![Battle Palettes
+Window](http://feuniverse.us/uploads/default/original/2X/5/58ea14b5a8feaf581fb85d6166ee103fbce64073.png)
+In FE7 it was 2 palettes per character, but in FE8 its 1 palette per class and
+7 classes per character. Basically, you go to the character's slot andset one
+of the seven class slots to the desired class, and then go to the other part
+and set the palette (trainee palette is used by the trainee class and etc.)
+
 ### TSA or Tile Maps
+
+Nintenlord's compressor and/or grit
+
 ### Compression
+
+Link to wiki article on LZ77
 

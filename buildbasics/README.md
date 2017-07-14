@@ -1,7 +1,7 @@
 
 ## Buildfile Basics
 
-### [Baby's First Buildfile](#babys-first-buildfile)
+### Baby's First Buildfile
 
 Open up `ROM Buildfile.txt` and paste:
 
@@ -10,7 +10,7 @@ Open up `ROM Buildfile.txt` and paste:
 *Wow, what a great buildfile!* What does it do? Let's find out with an
 **example**!
 
-### [Hello, World!](#hello-world)
+### Hello, World!
 
 Create a **new text file** and type:
 
@@ -45,7 +45,7 @@ translate to `Hello World!` **Congratulations, you inserted some data!**
 
 But this is just the beginning of what buildfiles can do...
 
-### [Understanding \#include](#understanding-include)
+### Understanding \#include
 
 What does `#include "some/file.txt"` do? Basically, it inserts the entire
 contents of `some/file.txt` in place.
@@ -55,7 +55,7 @@ So in our ROM Buildfile, the line `#include "Hello World.txt"` becomes
 
 >#### **The file you #include can #include other files!**
 
-### [PUSH and POP](#push-and-pop)
+### PUSH and POP
 
 Let's take a step back and look at our `ROM Buildfile` again. What does `ORG
 0x1000000` mean? **ORG** stands for **Origin** meaning the starting offset of
@@ -116,7 +116,7 @@ jumps back to the last bookmark you created.
 Assemble to a fresh ROM and this time, you'll see two `Hello Worlds` together,
 and `Hellow Orld` on its own at 0x1000050.
 
-### [Definitions, Labels and Macros](#definitions-labels-and-macros)
+### Definitions, Labels and Macros
 
 It's now time to introduce you to one of the simplest, but  **most powerful** commands in Event Assembler:
 `#define`!
@@ -183,7 +183,7 @@ As you can see, **a Label is an automatically defined offset**. In this case,
 it tells you exactly where Hellow Orld begins. We'll be using labels a lot to
 track where our data is inserted.
 
-### [MAKE HACK.cmd](#make-hackcmd)
+### MAKE HACK.cmd
 
 You may have noticed that every single time we
 assemble, we use the **same** text file, the **same** ROM, and the **same**

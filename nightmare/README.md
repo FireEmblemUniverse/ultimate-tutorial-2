@@ -7,14 +7,14 @@ for you, **you won't need to worry about it!** You do need to download the
 appropriate set of **Nightmare Modules** for your game, but you won't need
 the actual Nightmare program.
 
-### [How Tables Work](#how-tables-work)
+### How Tables Work
 
 Nightmare modules essentially describe **data tables** in the ROM. They say
 **where** the table is, how many **columns**, how many **rows**, and so on.
 Using this information, we are able to understand what each bit of data in the
 table **represents** and change it accordingly.
 
-### [Using NMM2CSV](#using-nmm2csv)
+### Using NMM2CSV
 
 When you download **NMM2CSV** you'll see that it is in fact made up of two
 programs: N2C.exe and C2EA.exe.
@@ -59,7 +59,7 @@ next time you run `MAKE HACK.CMD`, the changes will be saved!
 
 > You can add C2EA into your MAKEHACK.cmd batch file using `cd "%~dp0Tables"` (or whatever subfolder c2ea is in) `c2ea "%~dp0FE8_clean.gba"` (the path to the clean rom is only needed if you are repointing a table)
 
-### [Using Definitions](#using-definitions)
+### Using Definitions
 
 NMM2CSV comes with a file called `Table Definitions.txt`. This comes with a few
 useful definitions like weapon and character abilities. You can also add your
@@ -86,7 +86,7 @@ to have, added together. (You can also use `|`(bitwise OR) instead of `+`.)
 Once again, we can **save and run C2EA,** and the changes will be inserted the
 next time we assemble.
 
-### [Repointing and Expanding (\#inctext)](#repointing-and-expanding-inctext)
+### Repointing and Expanding (\#inctext)
 
 You can expand a table simply by adding some rows to the bottom. You can put
 `INLINE LabelName` in the first cell to have the table inserted into free space

@@ -48,7 +48,7 @@ portrait 0x17F would be `[LoadFace][0x7F][0x02]`. You only need `[LoadFace]` if
 a portrait is actually being **loaded**. Otherwise, you can simply use
 [Open(position)] to make the face at that position **active**.
 
-### [Inserting Text](#insert)
+### Inserting Text
 
 Textprocess.exe works by dragging a text file onto the exe. It then converts
 this text file for EA insertion and generates an **installer file** that you

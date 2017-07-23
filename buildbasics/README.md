@@ -5,7 +5,8 @@
 
 Open up `ROM Buildfile.txt` and paste:
 
-    #include eastdlib.event ORG 0x1000000
+    #include eastdlib.event
+	ORG 0x1000000
 
 *Wow, what a great buildfile!* What does it do? Let's find out with an
 **example**!

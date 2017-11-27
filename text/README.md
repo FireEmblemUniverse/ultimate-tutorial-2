@@ -40,7 +40,7 @@ Now, let's look at something a little more complicated.
     words at you![A][X]
 
 > #### The positions from left (flip for the right side):
-> [FarFarLeft]\(offscreen) > [FarLeft] > [Midleft] > [Left]
+> `[FarFarLeft]`\(offscreen) > `[FarLeft]` > `[Midleft]` > `[Left]`
 
 `[LoadFace][0x02][0x01]` is used to load up portrait number 0x02. If you have
 more than 0xFF portraits, the **higher digit carries over** to the [0x01], e.g.
@@ -82,17 +82,19 @@ You'll notice there aren't any actual text entries here, those are all split
 into separate text files for organization. Peeking at PrologueText.txt, we can
 see things like:
 
-    #0x664 BrownBoxPrologue
-    1 year ago[X]
-    
-    #0x665 BrownBoxPrologue2
-    Present day[X]
-    
-    # 0x1a2 Prologue_Objective_Long
-    Survive[X]
-    
-    #0x19d Prologue_Goal_Window
-    Survive[X]
+```
+#0x664 BrownBoxPrologue
+1 year ago[X]
+
+#0x665 BrownBoxPrologue2
+Present day[X]
+
+# 0x1a2 Prologue_Objective_Long
+Survive[X]
+
+#0x19d Prologue_Goal_Window
+Survive[X]
+```
 
 Now you may have noticed something else this has in common with an event
 buildfile - whenever we process the text, it's **always the same file**.
@@ -101,14 +103,18 @@ Know what that means? **We can add it to MAKEHACK.cmd!**
 
 Here's an example from my own:
 
-    cd %~dp0 copy FE8_clean.gba FE_Hack.gba
-    
-    cd "%~dp0Tables" c2ea "%~dp0FE8_clean.gba"
-    
-    cd "%~dp0Text" textprocess_v2 text_buildfile.txt
-    
-    cd "%~dp0Event Assembler" Core A FE8 "-output:%~dp0FE_Hack.gba"
-    "-input:%~dp0ROM Buildfile.event"
+```
+cd %~dp0
+copy FE8_clean.gba FE_Hack.gba
 
-  pause
+cd "%~dp0Tables"
+c2ea "%~dp0FE8_clean.gba"
 
+cd "%~dp0Text"
+textprocess_v2 text_buildfile.txt
+
+cd "%~dp0Event Assembler"
+Core A FE8 "-output:%~dp0FE_Hack.gba" "-input:%~dp0ROM Buildfile.event"
+
+pause
+```

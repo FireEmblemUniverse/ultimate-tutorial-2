@@ -90,3 +90,35 @@ Then use FE8 Battle Frames Installer.txt with Event Assembler
 
 You're done!
 
+### Item Icons
+(Read GBA Graphics Editor first)
+Using the graphics pointer and the pallete pointer in that chapter, (hopefully) you've
+found the vanilla item icons. Set the width correctly and the height to 64. Save that
+image. Next, add 0x1000 to the offset. In other words, change the 2 to a 3.
+Woah it's at the next batch of items and stuff.
+Yes. Save that image and repeat until you have 7 sheets.
+Great! Now make your edits to your item icons.
+
+In a new .event file...
+```
+PUSH
+ORG $5926F4
+
+#incext Png2Dmp "Sheet 1.png"
+
+#incext Png2Dmp "Sheet 2.png"
+
+#incext Png2Dmp "Sheet 3.png"
+
+#incext Png2Dmp "Sheet 4.png"
+
+#incext Png2Dmp "Sheet 5.png"
+
+#incext Png2Dmp "Sheet 6.png"
+
+#incext Png2Dmp "Sheet 7.png"
+
+POP
+```
+Notice item icons aren't lz77 compressed.
+If necessary, don't forget to change the icon for the item in the Item Table.

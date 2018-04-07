@@ -42,17 +42,18 @@ it has 2 pointers we need. They are named a little stupidly in some versions so 
 me clarify.
 
 The first pointer is to the graphics we just inserted.
-The second pointer is to data that handles its animation (OAM data).
+The second pointer is to data that handles its animation (AP pointer).
 
-OAM data? Sounds scary. Don't worry. We barely have to worry about it.
+AP pointer? Sounds scary. Don't worry. We barely have to worry about it.
 So now write your label (ChampionMv|IsPointer) into the first pointer, but this time,
 the slot number has to match the class number. If you're overwriting the Revenant class,
 the new moving map sprite has to go in the moving Revenant map sprite slot.
 
-Then the OAM data. The best thing to do is not touch it. Test new the sprite before
-touching the OAM pointer. If it looks fine, it's good. If it looks weird, then try a
+Then the AP pointer. The best thing to do is not touch it. If you're copying a
+sprite that already exists in-game, it's a good idea to copy this pointer.
+With a new sprite, uf it looks fine, it's good. If it looks weird, then try a
 different one from a vanilla class that has a similar sprite. I've never seen a moving
-sprite that doesn't have vanilla OAM data that works for it.
+sprite that doesn't have vanilla animation data that works for it.
 
 Then that's it! Your map sprites are good to go.
 ### Custom CGs

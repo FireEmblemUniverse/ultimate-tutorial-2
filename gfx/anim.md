@@ -1,6 +1,51 @@
 ## Inserting Animations
 
-TODO
+We're going to take out our handy Animation Assembler.exe. All we do is drag and drop
+our FEdidor-formatted animations onto the exe, and a .event file should pop out.
+Within the .event file, there will be a slot near the top to define which animation
+slot you are using for this animation. Now go ahead and #include it!
+
+Also, I suggest using {} with any outputted files. Labels within the .event file are
+dependant on the file names of the frames, and many frames from different animations
+have the same name.
+
+Next, in a new file...
+
+```
+#define SwordAnim(Animation) "BYTE Swords 0x01 ; SHORT Animation"
+#define SpearAnim(Animation) "BYTE Spears 0x01 ; SHORT Animation"
+#define AxeAnim(Animation) "BYTE Axes 0x01 ; SHORT Animation"
+#define HandAxeAnim(Animation) "BYTE HandAxe 0x00 ; SHORT Animation ; BYTE Tomahawk 0x00 ; SHORT Animation"
+#define BowAnim(Animation) "BYTE Bows 0x01 ; SHORT Animation"
+#define StaffAnim(Animation) "BYTE Staves 0x01 ; SHORT Animation"
+#define AnimaAnim(Animation) "BYTE Anima 0x01 ; SHORT Animation"
+#define LightAnim(Animation) "BYTE Light 0x01 ; SHORT Animation"
+#define DarkAnim(Animation) "BYTE Dark 0x01 ; SHORT Animation"
+#define UnarmedAnim(Animation) "BYTE Item 0x01 ; SHORT Animation"
+#define SpecialAnim(Animation,Weapon) "BYTE Weapon 0x00 ; SHORT Animation"
+
+```
+So now we need to tell the game which animation to use for each weapon type.
+For each class, in this new file, you want to set up something like the following:
+```
+MarshalAnim:
+SwordAnim(MarshalSword)
+SpearAnim(MarshalSpear)
+AxeAnim(MarshalAxe)
+HandAxeAnm(MarshalHandAxe)
+UnarmedAnim(MarshalUnarmed)
+WORD 0x0	// Seperator
+```
+I suggest putting all of these for each class in the same file.
+
+Note that you need to specify the hand axe animation!
+If you want to do a special animation, kind of like Hector with Armads, Eliwood
+with Durandal, or Lyn with Sol Katti, you would add to the list something like...
+```
+SpecialAnim(MarshalSpecial,UberSpear)
+```
+Finally, we go into our class editor csv and put MarshalAnim|IsPointer into the
+Battle Animation Pointer slot, and you should be good to go!
 
 ### Inserting existing animations
 
@@ -70,10 +115,16 @@ There's a bit more to Pal2EA, but you can look into the documentation for that.
 
 
 ### Spell Animations
+We're going to use [CSA_Creator.exe](http://feuniverse.us/t/fe6-7-8-circles-spell-animation-creator-updated-to-v1-1/1946?u=circleseverywhere) for this one. Drag and drop your FEditor-formatted
+spell onto the .exe, and a .event file will be outputted. In the .event file,
+specify the slot you're inserting the spell into. #include that file in the master
+spell installer, then #include that in your buildfile.
 
-Download [Circles' Spell Animation
-Creator](http://feuniverse.us/t/fe6-7-8-circles-spell-animation-creator-updated-to-v1-1/1946?u=circleseverywhere)
-and drag your script onto `CSA_Creator.exe`. Then `#include` your created event
-file at the end of the Master Spell Animation Installer, and `#include` THAT in
-your buildfile.
+Next we need to use the Spell Association Editor.
+Find the item that you're replacing in the item slot. If you're adding a new
+item slot to the Item Editor, just make a new slot to the end of the Spell Association
+Editor. In the row with your item, specify the animation slot, and the flash color
+on the map for when animations are off. All the other slots are straight-forward.
+
+No need to mess with the Item Editor on this one. Yay.
 

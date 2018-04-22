@@ -83,7 +83,7 @@ also refer to both **sprites** and **BG layers** differently. For the purposes
 of this tutorial, terms you may have heard before, or may hear later, have been
 used, such as **TSA**.
 
-####Sprites
+#### Sprites
 
 **Sprites** have nearly the opposite characteristics: they're mobile, usually
 small, and lack **TSA**. **Sprites**, or **objects**, are written to

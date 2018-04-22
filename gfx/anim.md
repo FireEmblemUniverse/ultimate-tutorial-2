@@ -79,16 +79,18 @@ When you've got your palette done, click Copy hex to clipboard and you'll get a 
 
 We're going to make a new .txt where we'll create our input to Pal2EA. I'm going to refer to this as Palette Input.txt. This is the file we'll give Pal2EA which will generate the .event's we actually insert.
 
+```
 #char(0x6F) "AlanCav" set{0x02,0x1,0x5}
 	5553FF7FFF5B737FF431AA799E00F8009F26DE0017002A001D4736324E1DA514
 	auto
 	auto
 	auto
 	auto
+```
 
 This will probably be easier to explain with an example, so here it is.
 
-#char(0x6F) means that we're inserting the palette into 0x6F in that table. You can find the list of slots in the same folder as the Animation nmm's. It's called Palette List.txt. 0x6F is an empty slot, they start from 0x6E.
+`#char(0x6F)` means that we're inserting the palette into 0x6F in that table. You can find the list of slots in the same folder as the Animation nmm's. It's called Palette List.txt. 0x6F is an empty slot, they start from 0x6E.
 
 "AlanCav" is something Pal2EA will print so you know it's processed this palette. Not necessary and you can put a string in between the quotes.
 
@@ -112,9 +114,8 @@ Once you've done that, drag Palette Input.txt onto Pal2EA and #include Palette S
 
 There's a bit more to Pal2EA, but you can look into the documentation for that.
 
-
-
 ### Spell Animations
+
 We're going to use [CSA_Creator.exe](http://feuniverse.us/t/fe6-7-8-circles-spell-animation-creator-updated-to-v1-1/1946?u=circleseverywhere) for this one. Drag and drop your FEditor-formatted
 spell onto the .exe, and a .event file will be outputted. In the .event file,
 specify the slot you're inserting the spell into. #include that file in the master

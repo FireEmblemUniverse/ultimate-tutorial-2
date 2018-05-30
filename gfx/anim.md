@@ -1,13 +1,10 @@
 ## Inserting Animations
 
-We're going to take out our handy Animation Assembler.exe. All we do is drag and drop
-our FEdidor-formatted animations onto the exe, and a .event file should pop out.
-Within the .event file, there will be a slot near the top to define which animation
-slot you are using for this animation. Now go ahead and #include it!
+We're going to take out our handy [Animation Assembler.exe](http://feuniverse.us/t/fe7-8-animation-assembler-convert-feditor-format-for-insertion-with-ea/1880). All we do is drag and drop our FEdidor-formatted animations onto the exe, and a .event file should pop out.
 
-Also, I suggest using `{ }` with any outputted files. Labels within the .event file are
-dependant on the file names of the frames, and many frames from different animations
-have the same name.
+Within the .event file, there will be a slot near the top to define which animation slot you are using for this animation. Now go ahead and `#include` it!
+
+Also, I suggest using `{ }` with any outputted files. Labels within the .event file are dependant on the file names of the frames, and many frames from different animations have the same name.
 
 Next, in a new file...
 
@@ -25,8 +22,7 @@ Next, in a new file...
 #define SpecialAnim(Animation,Weapon) "BYTE Weapon 0x00 ; SHORT Animation"
 ```
 
-So now we need to tell the game which animation to use for each weapon type.
-For each class, in this new file, you want to set up something like the following:
+So now we need to tell the game which animation to use for each weapon type. For each class, in this new file, you want to set up something like the following:
 
 ```
 MarshalAnim:
@@ -35,18 +31,20 @@ SpearAnim(MarshalSpear)
 AxeAnim(MarshalAxe)
 HandAxeAnm(MarshalHandAxe)
 UnarmedAnim(MarshalUnarmed)
-WORD 0x0	// Seperator
+WORD 0x0 // Seperator
 ```
+
 I suggest putting all of these for each class in the same file.
 
 Note that you need to specify the hand axe animation!
 If you want to do a special animation, kind of like Hector with Armads, Eliwood
 with Durandal, or Lyn with Sol Katti, you would add to the list something like...
+
 ```
 SpecialAnim(MarshalSpecial,UberSpear)
 ```
-Finally, we go into our class editor csv and put MarshalAnim|IsPointer into the
-Battle Animation Pointer slot, and you should be good to go!
+
+Finally, we go into our class editor csv and put MarshalAnim|IsPointer into the Battle Animation Pointer slot, and you should be good to go!
 
 ### Inserting existing animations
 
@@ -66,7 +64,7 @@ I use Aseprite and Blender to animate, and it works pretty well.
 
 ### Battle Palette Editing
 
-For the first step of this, you'll need to get a copy of FE Recolor. You'll also need Pal2EA for that, so grab that as well.
+For the first step of this, you'll need to get a copy of [FE Recolor](http://feuniverse.us/t/fe-recolor/95). You'll also need [Pal2EA](http://feuniverse.us/t/pal2ea-the-buildfile-palette-inserter/2646) for that, so grab that as well.
 
 FERecolor is a program used to make palette changes for battle animations. We're doing our recolor and then getting those colors as a hex for later.
 
@@ -75,8 +73,6 @@ Open it up and go to Load Image. Open up the image for the class you want to wor
 Just make sure not to meddle with the box below the reset buttons. That's the order which will be needed for the next step.
 
 When you've got your palette done, click Copy hex to clipboard and you'll get a hex string. Close the box, we're now moving to Pal2EA.
-
-
 
 We're going to make a new .txt where we'll create our input to Pal2EA. I'm going to refer to this as Palette Input.txt. This is the file we'll give Pal2EA which will generate the .event's we actually insert.
 

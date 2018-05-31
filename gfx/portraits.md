@@ -25,6 +25,4 @@ This is a hackbox. Your portrait should fit in this.
 
 ### Ripping Portraits
 
-You can use FEditor to rip portraits and have them formatted ready to go.
-Alternatively you can download all the GBA portraits [**right here**](doc.feuniverse.us/static/resources/mugs.png).
-
+You can use FEditor to rip portraits and have them formatted ready to go. Alternatively you can download all the GBA portraits [**right here**](https://doc.feuniverse.us/static/resources/mugs.png).

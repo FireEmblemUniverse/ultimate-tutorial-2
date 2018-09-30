@@ -85,7 +85,7 @@ Note that you will need separate images for the Enemy side and the Player side, 
 
 Convert these images to bin files and compress using lz77 with Wingrit.
 
-####The battle frame itself
+#### The battle frame itself
 
 Build your battle frame like this default layout here:
 

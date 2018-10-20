@@ -81,13 +81,78 @@ Graphic is arranged
       01 02 03 04 05 06 07 08
       09 10 11 12 13 14 15 16
 
-convert these images to bin files and compress using lz77
+Note that you will need separate images for the Enemy side and the Player side, as the edge tiles are different.
 
-Format battle frame like the default
-in wingrit use these settings for your battle frame:
+Convert these images to bin files and compress using lz77 with Wingrit.
+
+#### The battle frame itself
+
+Build your battle frame like this default layout here:
+
+![battle frame layout example](/gfx/BattlescreenMenus.png)
+
+Once you've made your edits, open your hack in FEBuilder. Go to the "Battle Screen" editor from Advanced Editors and insert your edited frame. Save it, close the Battle Screen editor, save your ROM and re-open the Battle Screen editor. Go to the "Main" tab at the bottom of the editor - you should see a small image containing the tiles from your new battle frame. Click "Export image".
+
+In your graphics installer, add the following:
+```
+PUSH
+    ORG $51f68
+    POIN BattleFrame
+POP
+BattleFrame:
+    MESSAGE Battle frame gfx at currentOffset
+    #incext Png2Dmp "YourExportedBattleframeTiles.png" --lz77
+```
+
+Now run makehack, and in the output, note where the "Battle frame gfx at" offset is - copy it.
+
+Open GBAGE and, in the Image Control window, paste that offset where you inserted your battle frame tiles. Make sure "Compressed graphics" is checked, and set width to `15` and height to `68`. If the colors are messed up, open the Palette Control and paste offset `802558` in the offset box. Now open Tile Control and check "Use TSA", and paste offset `80201C` in the offset box there. You can now edit any TSA errors by clicking the tile and scrolling through the "Graphics" scroller in Tile Control until it's the correct graphic. 
+Refer to the Wingrit screenshot below - the first red row and the first blue row are what will be loaded when 2 units are on-screen together (battle/healing), and the final blue row is loaded when 1 unit is on-screen (e.g. promotion). Remember to update the TSA for both. *Make sure that any areas that are the background color in the screenshot (e.g. where the unit names and weapon names are placed) are also blank in your TSA edit.* Save your rom once you've finished editing the TSA.
+
+Open the rom in HxD (or other hex editor) and goto address `80201C` - this is where the TSA for the battle frame lives. The palette is located at `802558`. Select from `80201C` to `802557` and copy the data, then make an empty .bin file and paste-insert. Save the new .bin file as "battlescreenTSA.bin".
+
+Now, add to your buildfile inside your push-pop:
+```
+    ORG $80201c
+    #incbin "battlescreenTSA.bin"
+```
+
+If you changed the palette, open your original battle frame in wingrit and use these settings to export:
 ![grit settings](https://i.gyazo.com/b153f107d63d24084884ebc715ce4708.png)
 
-Then use FE8 Battle Frames Installer.txt with Event Assembler
+You can then insert the resulting .pal.bin at offset `802558`. *NOTE: even though you are exporting a .map.bin as well, do not insert this file - it is not TSA data and will only confuse the issue.*
+
+With all parts in place your graphics installer should look something like this:
+```
+//New Battle Frame:
+    ORG $51f68
+    POIN BattleFrame
+    ORG $51fc8
+    POIN BF_EN
+    ORG $52088
+    POIN BF_PN
+    ORG $52028
+    POIN BF_EW
+    ORG $52164
+    POIN BF_PW
+    ORG $80201c
+    #incbin "battlescreenTSA.bin"
+    ORG $802558
+    #incbin "battlescreenTSA.pal.bin"
+
+
+//Put this part in free space
+    BattleFrame:
+    #incext Png2Dmp "YourExportedBattleframeTiles.png" --lz77
+    BF_EN:
+    #incbin "bin\BF_Enemyname.bin"
+    BF_PN:
+    #incbin "bin\BF_Playername.bin"
+    BF_EW:
+    #incbin "bin\BF_Enemywep.bin"
+    BF_PW:
+    #incbin "bin\BF_Playerwep.bin"
+```
 
 You're done!
 

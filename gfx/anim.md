@@ -10,7 +10,7 @@ Next, in a new file...
 
 ```
 #define SwordAnim(Animation) "BYTE Swords 0x01 ; SHORT Animation"
-#define SpearAnim(Animation) "BYTE Spears 0x01 ; SHORT Animation"
+#define LanceAnim(Animation) "BYTE Lances 0x01 ; SHORT Animation"
 #define AxeAnim(Animation) "BYTE Axes 0x01 ; SHORT Animation"
 #define HandAxeAnim(Animation) "BYTE HandAxe 0x00 ; SHORT Animation ; BYTE Tomahawk 0x00 ; SHORT Animation"
 #define BowAnim(Animation) "BYTE Bows 0x01 ; SHORT Animation"
@@ -18,7 +18,7 @@ Next, in a new file...
 #define AnimaAnim(Animation) "BYTE Anima 0x01 ; SHORT Animation"
 #define LightAnim(Animation) "BYTE Light 0x01 ; SHORT Animation"
 #define DarkAnim(Animation) "BYTE Dark 0x01 ; SHORT Animation"
-#define UnarmedAnim(Animation) "BYTE Item 0x01 ; SHORT Animation"
+#define UnarmedAnim(Animation) "BYTE Disarmed 0x01 ; SHORT Animation"
 #define SpecialAnim(Animation,Weapon) "BYTE Weapon 0x00 ; SHORT Animation"
 ```
 
@@ -27,7 +27,7 @@ So now we need to tell the game which animation to use for each weapon type. For
 ```
 MarshalAnim:
 SwordAnim(MarshalSword)
-SpearAnim(MarshalSpear)
+LanceAnim(MarshalLance)
 AxeAnim(MarshalAxe)
 HandAxeAnm(MarshalHandAxe)
 UnarmedAnim(MarshalUnarmed)

@@ -17,6 +17,16 @@ the same as the file name):
     SongTable(8,FE4Ch10,MapMusicGroup)
 	#include "FE4Ch10.event"
 
+In some cases, the label name will not match the file name. To check this,
+open the .event file produced by S2EA, scroll down to the bottom and see
+what the label with the song data is called.
+
+Additionally, S2EA will by default output songs at max volume. To change
+the master volume of the entire song, take a look at the top of the file
+for the define with the master volume. Max volume is 127, min is 0.
+
+	#define	song17_mvl  64
+
 ### Custom SFX
 ### About Song Groups
 
